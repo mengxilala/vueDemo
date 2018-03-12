@@ -1,0 +1,29 @@
+<script id="my-list" type="text/x-template"> 
+  <div class="my-list"> 
+    <div class="title">{{ title }}</div> 
+    <div class="list"> 
+      <!-- <div class="list-item" v-for="shape in shapes"> 
+        <div>{{ shape.name }} <small>({{ shape.sides }} sides)</small></div> 
+      </div>  -->
+      <slot></slot> 
+    </div> 
+  </div> 
+</script>
+<div id="app">
+  <my-list title="Shapes">
+    <div class="list-item" v-for="shape in shapes">
+      <div>{{ shape.name }}
+        <small>({{ shape.sides }} sides)</small>
+      </div>
+    </div>
+  </my-list>
+
+  <my-list title="Colors">
+    <div class="list-item" v-for="color in colors">
+      <div>
+        <div class="swatch" :style="{ background: color.hex }"></div>
+        {{ color.name }}
+      </div>
+    </div>
+  </my-list>
+</div>

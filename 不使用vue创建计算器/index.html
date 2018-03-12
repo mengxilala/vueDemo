@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>vue-calculator</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <div id="app">
+        <Calculator class=page-1 v-show="currentPage"></Calculator>
+        <Example class=page-2 v-show=!currentPage></Example>
+        <button v-on:click="currentPage = !currentPage">切换</button>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script class="example" type="text/plain">
+        <div v-on:click="ShowExample">点击显示另一个组件</div>
+    </script>
+    <script src="index.js"></script>
+</body>
+</html>
